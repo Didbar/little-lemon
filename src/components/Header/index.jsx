@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 import Navigation from './Navigation'
 import MobileNav from './MobileNav'
 
-import Logo from '../../assets/logo.jpg'
-import '../../styles/Header.css'
+import Logo from '../assets/logo.jpg'
+import '../styles/Header.css'
 
 const Navbar = () => {
   return (

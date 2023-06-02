@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../../styles/MobileNav.css'
+import '../styles/MobileNav.css'
 import NavLinks from './NavLinks'
 import { GrMenu, GrClose } from 'react-icons/gr'
 

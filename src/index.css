@@ -86,8 +86,10 @@ img {
   max-width: 100%;
 }
 
-main > section {
-  margin-bottom: 5rem;
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .container {
@@ -101,7 +103,8 @@ main > section {
   display: grid;
 }
 
-.button-primary {
+.button-primary,
+.button-secondary {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   background-color: #f4ce14;
@@ -110,10 +113,42 @@ main > section {
   border: 0.1875rem solid #f4ce14;
   transition: background, border, color 0.5s;
 }
+.button-secondary {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+}
 
 .button-primary:hover,
+.button-secondary:hover,
+.button-secondary:focus,
 .button-primary:focus {
-  background-color: #495e57;
-  border-color: #495e57;
+  background-color: #374741;
+  border-color: #fefefe;
   color: #ffffff;
+}
+
+.image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  border-radius: 10px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  transition: transform 0.2s ease-in;
+}
+.image-box img:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 659px) {
+  .image-box {
+    width: 100%;
+    height: 250px;
+    position: initial;
+  }
 }

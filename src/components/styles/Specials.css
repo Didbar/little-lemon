@@ -1,0 +1,35 @@
+.specials-section-container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.specials-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.specials-section-title h1 {
+  font-size: 2rem;
+}
+
+.button-special {
+  font-size: smaller;
+  padding: 0.3rem 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .specials-section-title h1 {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .specials-section-title h1 {
+    font-size: 3.5rem;
+  }
+  .button-special {
+    padding: 0.6rem 1.2rem;
+  }
+}
