@@ -35,6 +35,7 @@ const LandingSection = () => {
         formik.resetForm()
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [response, isLoading])
 
   const formik = useFormik({
@@ -50,7 +51,7 @@ const LandingSection = () => {
       await submit('#submit', values)
     },
     validationSchema: Yup.object({
-      reservationDate: Yup.date().required(),
+      reservationDate: Yup.date().required('Reservation date is required'),
       reservationTime: Yup.string().required('Reservation time is required'),
       numberOfGuests: Yup.number().moreThan(0).lessThan(6).required(),
       email: Yup.string().required('Required').email('Invalid email address'),
@@ -158,7 +159,12 @@ const LandingSection = () => {
               />
               <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
             </FormControl>
-            <Button isLoading={isLoading} type='submit' colorScheme='yellow' width='full'>
+            <Button
+              isLoading={isLoading}
+              isDisabled={!formik.values.email | !formik.values.reservationDate}
+              type='submit'
+              colorScheme='yellow'
+              width='full'>
               <Text color='#495e57'>Reserve</Text>
             </Button>
           </VStack>
